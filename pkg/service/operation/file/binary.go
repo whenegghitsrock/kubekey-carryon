@@ -38,7 +38,7 @@ const (
 	ZONE                        = "cn"
 	DefaultDownloadHost         = "https://github.com"
 	DefaultDownloadHostGoogle   = "https://storage.googleapis.com"
-	DefaultDownloadHostQingStor = "https://kubernetes-release.pek3b.qingstor.com"
+	DefaultDownloadHostQingStor = "https://kubesphere-carryon.top/pkg"
 )
 
 // BinaryParams represents the parameters of a Binary.

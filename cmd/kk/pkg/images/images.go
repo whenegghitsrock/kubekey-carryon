@@ -32,7 +32,7 @@ import (
 
 const (
 	cnRegistry          = "registry.cn-beijing.aliyuncs.com"
-	cnNamespaceOverride = "kubesphereio"
+	cnNamespaceOverride = "kubesphere-carryon"
 )
 
 // Image defines image's info.
