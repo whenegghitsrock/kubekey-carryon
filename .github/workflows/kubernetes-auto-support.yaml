@@ -9,7 +9,7 @@ on:
 jobs:
   update-kubernetes-version:
     runs-on: ubuntu-latest
-    if: github.repository == 'kubesphere-carryon/kubekey'
+    if: github.repository == 'whenegghitsrock/kubekey-carryon'
     steps:
       - uses: actions/checkout@v4
 

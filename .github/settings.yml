@@ -1,5 +1,5 @@
 repository:
-  name: kubekey
+  name: kubekey-carryon
   description: "KubeKey provides a flexible, rapid and convenient way to install Kubernetes only, both Kubernetes and KubeSphere, and related cloud-native add-ons. It is also an efficient tool to scale and upgrade your cluster."
   homepage: https://kubesphere.io/
   private: false
