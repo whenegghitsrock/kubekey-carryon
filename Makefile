@@ -68,8 +68,8 @@ GOLANGCI_LINT_BIN := golangci-lint
 GOLANGCI_LINT := $(abspath $(TOOLS_BIN_DIR)/$(GOLANGCI_LINT_BIN))
 
 # Define Docker related variables. Releases should modify and double check these vars.
-REGISTRY ?= docker.io/kubespheredev
-PROD_REGISTRY ?= docker.io/kubesphere
+REGISTRY ?= docker.io/whenegghitsrock
+PROD_REGISTRY ?= docker.io/whenegghitsrock
 
 # capkk
 CAPKK_IMAGE_NAME ?= capkk-controller
