@@ -30,7 +30,7 @@ kubernetes:
     dns_cache_image: 
       registry: >-
         {{ .dockerio_registry }}
-      repository: kubesphere/k8s-dns-node-cache
+      repository: kubesphereon/k8s-dns-node-cache
       tag: 1.22.20
     dns_service_ip: >-
       {{ index (.kubernetes.networking.service_cidr | ipInCIDR) 2 }}
@@ -200,7 +200,7 @@ kubernetes:
     image: 
       registry: >-
         {{ .dockerio_registry }}
-      repository: kubesphere/etcd
+      repository: kubesphereon/etcd
       tag: 3.5.0
   # custom_labels: {}
   # if auto renew kubernetes certs

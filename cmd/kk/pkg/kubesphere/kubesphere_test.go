@@ -32,17 +32,17 @@ func Test_mirrorRepo(t *testing.T) {
 		{
 			name:    "test_latest",
 			version: "latest",
-			want:    "kubespheredev",
+			want:    "kubesphereondev",
 		},
 		{
 			name:    "test_master",
 			version: "master",
-			want:    "kubespheredev",
+			want:    "kubesphereondev",
 		},
 		{
 			name:    "test_v3.2.1-rc.1",
 			version: "v3.2.1-rc.1",
-			want:    "kubespheredev",
+			want:    "kubesphereondev",
 		},
 		{
 			name:    "test_v3.2.1",
@@ -57,12 +57,12 @@ func Test_mirrorRepo(t *testing.T) {
 		{
 			name:    "test_3.2.0",
 			version: "3.2.0",
-			want:    "kubespheredev",
+			want:    "kubesphereondev",
 		},
 		{
 			name:    "test_v3.2.0-alpha.1",
 			version: "v3.2.0-alpha.1",
-			want:    "kubespheredev",
+			want:    "kubesphereondev",
 		},
 		{
 			name:    "test_v1.2.0",
@@ -89,9 +89,9 @@ func repo(version string) string {
 	case stable:
 		r = "kubesphere"
 	case dev:
-		r = "kubespheredev"
+		r = "kubesphereondev"
 	case latest:
-		r = "kubespheredev"
+		r = "kubesphereondev"
 	default:
 		r = "kubesphere"
 	}

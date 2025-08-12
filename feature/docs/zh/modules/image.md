@@ -49,9 +49,9 @@ image模块允许用户下载镜像到本地目录或上传镜像到远程目录
     pull:
       images_dir: /tmp/images/
       manifests: 
-       - "docker.io/kubesphere/ks-apiserver:v4.1.3"
-       - "docker.io/kubesphere/ks-controller-manager:v4.1.3"
-       - "docker.io/kubesphere/ks-console:3.19"
+       - "docker.io/kubesphereon/ks-apiserver:v4.1.3"
+       - "docker.io/kubesphereon/ks-controller-manager:v4.1.3"
+       - "docker.io/kubesphereon/ks-console:3.19"
 ```
 
 2. 推送镜像到远程仓库
@@ -62,6 +62,6 @@ image模块允许用户下载镜像到本地目录或上传镜像到远程目录
     dest: hub.kubekey/{{ .module.image.src.reference.repository }}:{{ .module.image.src.reference.reference }}
 ```
 即：
-docker.io/kubesphere/ks-apiserver:v4.1.3 => hub.kubekey/kubesphere/ks-apiserver:v4.1.3
-docker.io/kubesphere/ks-controller-manager:v4.1.3 => hub.kubekey/kubesphere/ks-controller-manager:v4.1.3
-docker.io/kubesphere/ks-console:3.19 => hub.kubekey/kubesphere/ks-console:v4.1.3
+docker.io/kubesphereon/ks-apiserver:v4.1.3 => hub.kubekey/kubesphere/ks-apiserver:v4.1.3
+docker.io/kubesphereon/ks-controller-manager:v4.1.3 => hub.kubekey/kubesphere/ks-controller-manager:v4.1.3
+docker.io/kubesphereon/ks-console:3.19 => hub.kubekey/kubesphere/ks-console:v4.1.3

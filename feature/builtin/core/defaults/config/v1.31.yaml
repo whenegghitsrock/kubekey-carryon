@@ -73,14 +73,14 @@ spec:
   #  - docker.io/calico/node-driver-registrar:v3.28.2
   #  - docker.io/calico/node:v3.28.2
   #  - docker.io/calico/pod2daemon-flexvol:v3.28.2
-  #  - docker.io/kubesphere/k8s-dns-node-cache:1.22.20
+  #  - docker.io/kubesphereon/k8s-dns-node-cache:1.22.20
   #  - docker.io/openebs/provisioner-localpv:3.3.0
   #  - docker.io/coredns/coredns:1.8.6
-  #  - docker.io/kubesphere/kube-apiserver:{{ .kube_version }}
-  #  - docker.io/kubesphere/kube-controller-manager:{{ .kube_version }}
-  #  - docker.io/kubesphere/kube-proxy:{{ .kube_version }}
-  #  - docker.io/kubesphere/kube-scheduler:{{ .kube_version }}
-  #  - docker.io/kubesphere/pause:3.8
+  #  - docker.io/kubesphereon/kube-apiserver:{{ .kube_version }}
+  #  - docker.io/kubesphereon/kube-controller-manager:{{ .kube_version }}
+  #  - docker.io/kubesphereon/kube-proxy:{{ .kube_version }}
+  #  - docker.io/kubesphereon/kube-scheduler:{{ .kube_version }}
+  #  - docker.io/kubesphereon/pause:3.8
   #  - quay.io/tigera/operator:v1.36.5
   #  - docker.io/calico/ctl:v3.28.2
   #  - docker.io/calico/typha:v3.28.2

@@ -70,7 +70,7 @@ spec:
     # Optional extra Subject Alternative Names (SANs) to use for the API Server serving certificate. Can be both IP addresses and DNS names.
     apiserverCertExtraSans:  
       - 192.168.8.8
-      - lb.kubespheredev.local
+      - lb.kubesphereondev.local
     # Container Runtime, support: containerd, cri-o, isula. [Default: docker]
     containerManager: docker
     clusterName: cluster.local

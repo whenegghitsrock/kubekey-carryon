@@ -84,9 +84,9 @@ func TestParseRepositoryTag(t *testing.T) {
 		{
 			name: "test2",
 			args: args{
-				repos: "docker.io/kubesphere/kube-apiserver:v1.16.3",
+				repos: "docker.io/kubesphereon/kube-apiserver:v1.16.3",
 			},
-			want:  "docker.io/kubesphere/kube-apiserver",
+			want:  "docker.io/kubesphereon/kube-apiserver",
 			want1: "v1.16.3",
 		},
 		{

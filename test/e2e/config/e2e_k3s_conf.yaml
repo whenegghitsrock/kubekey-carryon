@@ -2,11 +2,11 @@
 
 images:
   # Use local dev images built source tree;
-  - name: kubespheredev/capkk-controller-{ARCH}:e2e
+  - name: kubesphereondev/capkk-controller-{ARCH}:e2e
     loadBehavior: mustLoad
-  - name: kubespheredev/k3s-bootstrap-controller-{ARCH}:e2e
+  - name: kubesphereondev/k3s-bootstrap-controller-{ARCH}:e2e
     loadBehavior: mustLoad
-  - name: kubespheredev/k3s-control-plane-controller-{ARCH}:e2e
+  - name: kubesphereondev/k3s-control-plane-controller-{ARCH}:e2e
     loadBehavior: mustLoad
   #
   ## PLEASE KEEP THESE UP TO DATE WITH THE COMPONENTS
@@ -51,8 +51,8 @@ providers:
             new: "imagePullPolicy: IfNotPresent"
           - old: --metrics-bind-addr=127.0.0.1:8080
             new: --metrics-bind-addr=:8080
-          - old: docker.io/kubespheredev/k3s-bootstrap-controller:main
-            new: docker.io/kubespheredev/k3s-bootstrap-controller-amd64:e2e
+          - old: docker.io/kubesphereondev/k3s-bootstrap-controller:main
+            new: docker.io/kubesphereondev/k3s-bootstrap-controller-amd64:e2e
   - name: k3s
     type: ControlPlaneProvider
     versions:
@@ -66,8 +66,8 @@ providers:
             new: "imagePullPolicy: IfNotPresent"
           - old: --metrics-bind-addr=127.0.0.1:8080
             new: --metrics-bind-addr=:8080
-          - old: docker.io/kubespheredev/k3s-control-plane-controller:main
-            new: docker.io/kubespheredev/k3s-control-plane-controller-amd64:e2e
+          - old: docker.io/kubesphereondev/k3s-control-plane-controller:main
+            new: docker.io/kubesphereondev/k3s-control-plane-controller-amd64:e2e
   - name: kubekey
     type: InfrastructureProvider
     versions:
@@ -77,8 +77,8 @@ providers:
         replacements:
           - old: "imagePullPolicy: Always"
             new: "imagePullPolicy: IfNotPresent"
-          - old: docker.io/kubespheredev/capkk-controller:main
-            new: docker.io/kubespheredev/capkk-controller-amd64:e2e
+          - old: docker.io/kubesphereondev/capkk-controller:main
+            new: docker.io/kubesphereondev/capkk-controller-amd64:e2e
         files:
           - sourcePath: "../data/k3s/v1beta1/cluster-template.yaml"
           - sourcePath: "../data/shared/v1beta1_provider/metadata.yaml"

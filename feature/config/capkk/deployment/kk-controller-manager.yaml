@@ -25,7 +25,7 @@ spec:
           - --v=4
         env:
           - name: EXECUTOR_IMAGE
-            value: docker.io/kubesphere/executor:latest
+            value: docker.io/kubesphereon/executor:latest
           - name: EXECUTOR_CLUSTERROLE
             value: capkk
         resources:

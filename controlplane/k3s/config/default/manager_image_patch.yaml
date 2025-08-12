@@ -7,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-        - image: docker.io/kubespheredev/k3s-control-plane-controller:main
+        - image: docker.io/kubesphereondev/k3s-control-plane-controller:main
           name: manager

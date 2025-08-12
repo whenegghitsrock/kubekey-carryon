@@ -34,7 +34,7 @@ const (
 	DefaultNetworkPlugin           = "calico"
 	DefaultPodsCIDR                = "10.233.64.0/18"
 	DefaultServiceCIDR             = "10.233.0.0/18"
-	DefaultKubeImageNamespace      = "kubesphere-carryon"
+	DefaultKubeImageNamespace      = "kubesphereon"
 	DefaultClusterName             = "cluster.local"
 	DefaultDNSDomain               = "cluster.local"
 	DefaultArch                    = "amd64"

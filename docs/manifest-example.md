@@ -56,12 +56,12 @@ spec:
   - docker.io/calico/node:v3.23.2
   - docker.io/calico/pod2daemon-flexvol:v3.23.2
   - docker.io/coredns/coredns:1.8.0
-  - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
-  - docker.io/kubesphere/kube-apiserver:v1.21.5
-  - docker.io/kubesphere/kube-controller-manager:v1.21.5
-  - docker.io/kubesphere/kube-proxy:v1.21.5
-  - docker.io/kubesphere/kube-scheduler:v1.21.5
-  - docker.io/kubesphere/pause:3.4.1
+  - docker.io/kubesphereon/k8s-dns-node-cache:1.15.12
+  - docker.io/kubesphereon/kube-apiserver:v1.21.5
+  - docker.io/kubesphereon/kube-controller-manager:v1.21.5
+  - docker.io/kubesphereon/kube-proxy:v1.21.5
+  - docker.io/kubesphereon/kube-scheduler:v1.21.5
+  - docker.io/kubesphereon/pause:3.4.1
 ```
 
 # The Manifest Definition
@@ -130,12 +130,12 @@ spec:
   - docker.io/calico/node:v3.20.0
   - docker.io/calico/pod2daemon-flexvol:v3.20.0
   - docker.io/coredns/coredns:1.8.0
-  - docker.io/kubesphere/k8s-dns-node-cache:1.15.12
-  - docker.io/kubesphere/kube-apiserver:v1.21.5
-  - docker.io/kubesphere/kube-controller-manager:v1.21.5
-  - docker.io/kubesphere/kube-proxy:v1.21.5
-  - docker.io/kubesphere/kube-scheduler:v1.21.5
-  - docker.io/kubesphere/pause:3.4.1
+  - docker.io/kubesphereon/k8s-dns-node-cache:1.15.12
+  - docker.io/kubesphereon/kube-apiserver:v1.21.5
+  - docker.io/kubesphereon/kube-controller-manager:v1.21.5
+  - docker.io/kubesphereon/kube-proxy:v1.21.5
+  - docker.io/kubesphereon/kube-scheduler:v1.21.5
+  - docker.io/kubesphereon/pause:3.4.1
   - dockerhub.kubekey.local/kubesphere/kube-apiserver:v1.22.1
   - dockerhub.kubekey.local/kubesphere/kube-controller-manager:v1.22.1
   - dockerhub.kubekey.local/kubesphere/kube-proxy:v1.22.1

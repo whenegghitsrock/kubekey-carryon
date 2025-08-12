@@ -4,7 +4,7 @@ cri:
   sandbox_image: 
     registry: >-
       {{ .dockerio_registry }}
-    repository: kubesphere/pause
+    repository: kubesphereon/pause
     tag: 3.5
   # support: containerd,docker
   # container_manager: docker

@@ -68,8 +68,8 @@ GOLANGCI_LINT_BIN := golangci-lint
 GOLANGCI_LINT := $(abspath $(TOOLS_BIN_DIR)/$(GOLANGCI_LINT_BIN))
 
 # Define Docker related variables. Releases should modify and double check these vars.
-REGISTRY ?= docker.io/kubespheredev
-PROD_REGISTRY ?= docker.io/kubesphere
+REGISTRY ?= docker.io/kubesphereondev
+PROD_REGISTRY ?= docker.io/kubesphereon
 
 # capkk
 CAPKK_IMAGE_NAME ?= capkk-controller
@@ -291,7 +291,7 @@ docker-build-k3s-control-plane: ## Build the docker image for k3s control plane 
 
 .PHONY: docker-build-e2e
 docker-build-e2e: ## Build the docker image for capkk
-	$(MAKE) docker-build REGISTRY=docker.io/kubespheredev PULL_POLICY=IfNotPresent TAG=e2e
+	$(MAKE) docker-build REGISTRY=docker.io/kubesphereondev PULL_POLICY=IfNotPresent TAG=e2e
 
 ## --------------------------------------
 ## Deployment

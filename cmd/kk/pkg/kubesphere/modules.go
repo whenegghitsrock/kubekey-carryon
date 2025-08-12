@@ -129,11 +129,11 @@ func MirrorRepo(kubeConf *common.KubeConf) string {
 	_, ok := kubesphere.CNSource[version]
 	if ok && os.Getenv("KKZONE") == "cn" {
 		if repo == "" {
-			repo = "registry.cn-beijing.aliyuncs.com/kubesphereio"
+			repo = "registry.cn-beijing.aliyuncs.com/kubesphereon"
 		} else if len(namespaceOverride) != 0 {
 			repo = fmt.Sprintf("%s/%s", repo, namespaceOverride)
 		} else {
-			repo = fmt.Sprintf("%s/kubesphere", repo)
+			repo = fmt.Sprintf("%s/kubesphereon", repo)
 		}
 	} else {
 		if repo == "" {
@@ -142,18 +142,18 @@ func MirrorRepo(kubeConf *common.KubeConf) string {
 			_, stable := kubesphere.StabledVersionSupport(version)
 			switch {
 			case stable:
-				repo = "kubesphere"
+				repo = "kubesphereon"
 			case dev:
-				repo = "kubespheredev"
+				repo = "kubesphereondev"
 			case latest:
-				repo = "kubespheredev"
+				repo = "kubesphereondev"
 			default:
-				repo = "kubesphere"
+				repo = "kubesphereon"
 			}
 		} else if len(namespaceOverride) != 0 {
 			repo = fmt.Sprintf("%s/%s", repo, namespaceOverride)
 		} else {
-			repo = fmt.Sprintf("%s/kubesphere", repo)
+			repo = fmt.Sprintf("%s/kubesphereon", repo)
 		}
 	}
 	return repo

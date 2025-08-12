@@ -100,7 +100,7 @@ DOCKER_OUT_TYPE ?= --push
 DOCKER_PUSH ?= $(DOCKER_BUILD) --platform $(PLATFORM) $(DOCKER_OUT_TYPE)
 
 # Define Docker related variables. Releases should modify and double check these vars.
-REGISTRY ?= docker.io/kubespheredev
+REGISTRY ?= docker.io/kubesphereondev
 
 # capkk
 CAPKK_CONTROLLER_IMG_NAME ?= capkk-controller-manager

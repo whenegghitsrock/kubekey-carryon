@@ -45,7 +45,7 @@ controller-manager:
   pullSecrets: []
   image:
     registry: ""
-    repository: kubesphere/kk-controller-manager
+    repository: kubesphereon/kk-controller-manager
     tag: ""
     digest: ""
     pullPolicy: IfNotPresent
@@ -74,7 +74,7 @@ controller-manager:
 executor:
   image:
     registry: ""
-    repository: kubesphere/kk-executor
+    repository: kubesphereon/kk-executor
     tag: ""
     digest: ""
     pullPolicy: IfNotPresent

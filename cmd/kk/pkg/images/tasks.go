@@ -191,8 +191,8 @@ func (s *SaveImages) Execute(runtime connector.Runtime) error {
 				variant = "-" + variant
 			}
 			// Ex:
-			// oci:./kubekey/artifact/images:docker.io/kubesphere/kube-apiserver:v1.21.5-amd64
-			// oci:./kubekey/artifact/images:docker.io/kubesphere/kube-apiserver:v1.21.5-arm-v7
+			// oci:./kubekey/artifact/images:docker.io/kubesphereon/kube-apiserver:v1.21.5-amd64
+			// oci:./kubekey/artifact/images:docker.io/kubesphereon/kube-apiserver:v1.21.5-arm-v7
 			destName := fmt.Sprintf("oci:%s:%s-%s%s", dirName, image, arch, variant)
 			logger.Log.Infof("[%d]Source: %s", index, srcName)
 			logger.Log.Infof("[%d]Destination: %s", index, destName)

@@ -15,7 +15,7 @@ var (
 	// ExecutorVerbose specifies the verbosity level used in playbook pod
 	ExecutorVerbose = Environment{env: "EXECUTOR_VERBOSE"}
 	// ExecutorImage specifies the container image used in playbook pod
-	ExecutorImage = Environment{env: "EXECUTOR_IMAGE", def: "docker.io/kubesphere/executor:latest"}
+	ExecutorImage = Environment{env: "EXECUTOR_IMAGE", def: "docker.io/kubesphereon/executor:latest"}
 	// ExecutorImagePullPolicy specifies the image pull policy used in playbook pod
 	ExecutorImagePullPolicy = Environment{env: "EXECUTOR_IMAGE_PULLPOLICY"}
 	// ExecutorClusterRole specifies the cluster role used in playbook pod

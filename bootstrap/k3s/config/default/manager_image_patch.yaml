@@ -7,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-        - image: docker.io/kubespheredev/k3s-bootstrap-controller:main
+        - image: docker.io/kubesphereondev/k3s-bootstrap-controller:main
           name: manager
