@@ -36,3 +36,46 @@ jobs:
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           make release-prod
+      
+      - name: Login to ALIYUN
+        uses: docker/login-action@v3
+        with:
+          registry: registry.cn-beijing.aliyuncs.com
+          username: ${{ secrets.ALIYUN_USERNAME }}
+          password: ${{ secrets.ALIYUN_PASSWORD }}
+
+      - name: Sync images to ALIYUN
+        run: |
+          # capkk-controller
+          docker pull --platform linux/amd64 docker.io/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}
+          docker tag docker.io/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker push registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker pull --platform linux/arm64 docker.io/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}
+          docker tag docker.io/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-arm64
+          docker push registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-arm64
+          docker manifest create registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-arm64 registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker manifest annotate registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-arm64 --os linux --arch arm64
+          docker manifest annotate registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}-amd64 --os linux --arch amd64
+          docker manifest push registry.cn-beijing.aliyuncs.com/kubesphereon/capkk-controller:${{ steps.chose_registry.outputs.tag }}
+          # k3s-bootstrap-controller
+          docker pull --platform linux/amd64 docker.io/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}
+          docker tag docker.io/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker push registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker pull --platform linux/arm64 docker.io/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}
+          docker tag docker.io/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-arm64
+          docker push registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-arm64
+          docker manifest create registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-arm64 registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker manifest annotate registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-arm64 --os linux --arch arm64
+          docker manifest annotate registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}-amd64 --os linux --arch amd64
+          docker manifest push registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-bootstrap-controller:${{ steps.chose_registry.outputs.tag }}
+          # k3s-control-plane-controller
+          docker pull --platform linux/amd64 docker.io/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}
+          docker tag docker.io/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker push registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker pull --platform linux/arm64 docker.io/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}
+          docker tag docker.io/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-arm64
+          docker push registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-arm64
+          docker manifest create registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-arm64 registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-amd64
+          docker manifest annotate registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-arm64 --os linux --arch arm64
+          docker manifest annotate registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }} registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}-amd64 --os linux --arch amd64
+          docker manifest push registry.cn-beijing.aliyuncs.com/kubesphereon/k3s-control-plane-controller:${{ steps.chose_registry.outputs.tag }}
