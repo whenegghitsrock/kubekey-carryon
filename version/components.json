@@ -1163,12 +1163,12 @@
     },
     "helm": {
         "amd64": {
-            "v3.9.0": "111c4aa64532946feb11a1542e96af730f9748483ee56a06e6b67609ee8cfec3",
-            "v3.14.3": "3bc1873eb4b8ca9a67387eb77554fe18a7f58858c57897a3d2bf2b0a35f625c3"
+            "v3.9.0": "1484ffb0c7a608d8069470f48b88d729e88c41a1b6602f145231e8ea7b43b50a",
+            "v3.14.3": "3c90f24e180f8c207b8a18e5ec82cb0fa49858a7a0a86e4ed52a98398681e00b"
         },
         "arm64": {
-            "v3.9.0": "2fcc6ffdaa280465f5a5c487ca87ad9bdca6101c714d3346ca6adc328e580b93",
-            "v3.14.3": "52350fc7a7317cd8ee386dee0b307de39d1e1e764a8df7aa9cc317a803a4dc3a"
+            "v3.9.0": "5c0aa709c5aaeedd190907d70f9012052c1eea7dff94bffe941b879a33873947",
+            "v3.14.3": "85e1573e76fa60af14ba7e9ec75db2129b6884203be866893fa0b3f7e41ccd5e"
         }
     },
     "kubecni": {
