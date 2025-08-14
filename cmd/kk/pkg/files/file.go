@@ -142,7 +142,7 @@ func NewKubeBinary(name, arch, version, prePath string, getCmd func(path, url st
 		component.FileName = helm
 		component.Url = fmt.Sprintf("https://get.helm.sh/helm-%s-linux-%s.tar.gz", version, arch)
 		if component.Zone == "cn" {
-			component.Url = fmt.Sprintf("https://kubesphere-carryon.top/pkg/linux-%s/%s/helm", arch, version)
+			component.Url = fmt.Sprintf("https://kubesphere-carryon.top/pkg/linux/helm-%s-linux-%s.tar.gz", arch, version)
 		}
 	case docker:
 		component.Type = DOCKER
@@ -181,6 +181,9 @@ func NewKubeBinary(name, arch, version, prePath string, getCmd func(path, url st
 		component.Url = fmt.Sprintf("https://github.com/xiaods/k8e/releases/download/%s+k8e2/k8e", version)
 		if arch == arm64 {
 			component.Url = fmt.Sprintf("https://github.com/xiaods/k8e/releases/download/%s+k8e2/k8e-%s", version, arch)
+		}
+		if component.Zone == "cn" {
+			component.Url = fmt.Sprintf("https://kubesphere-carryon.top/pkg/k8e/releases/download/%s+k8e2/linux/%s/k8s", version, arch)
 		}
 	case registry:
 		component.Type = REGISTRY
@@ -231,6 +234,9 @@ func NewKubeBinary(name, arch, version, prePath string, getCmd func(path, url st
 		component.Type = BUILD
 		component.FileName = fmt.Sprintf("buildx-%s.linux-%s", version, arch)
 		component.Url = fmt.Sprintf("https://github.com/docker/buildx/releases/download/%s/buildx-%s.linux-%s", version, version, arch)
+		if component.Zone == "cn" {
+			component.Url = fmt.Sprintf("https://kubesphere-carryon.top/pkg/docker/buildx/releases/download/%s/buildx-%s.linux-%s", version, version, arch)
+		}
 	default:
 		logger.Log.Fatalf("unsupported kube binaries %s", name)
 	}
