@@ -262,7 +262,7 @@ func (b *KubeBinary) Path() string {
 func (b *KubeBinary) GetCmd() string {
 	cmd := b.getCmd(b.Path(), b.Url)
 
-	if b.ID == helm && b.Zone != "cn" {
+	if b.ID == helm {
 		get := b.getCmd(filepath.Join(b.BaseDir, fmt.Sprintf("helm-%s-linux-%s.tar.gz", b.Version, b.Arch)), b.Url)
 		cmd = fmt.Sprintf("%s && cd %s && tar -zxf helm-%s-linux-%s.tar.gz && mv linux-%s/helm . && rm -rf *linux-%s*",
 			get, b.BaseDir, b.Version, b.Arch, b.Arch, b.Arch)
