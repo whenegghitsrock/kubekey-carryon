@@ -1168,7 +1168,7 @@
         },
         "arm64": {
             "v3.9.0": "5c0aa709c5aaeedd190907d70f9012052c1eea7dff94bffe941b879a33873947",
-            "v3.14.3": "85e1573e76fa60af14ba7e9ec75db2129b6884203be866893fa0b3f7e41ccd5e"
+            "v3.14.3": "52350fc7a7317cd8ee386dee0b307de39d1e1e764a8df7aa9cc317a803a4dc3a"
         }
     },
     "kubecni": {
