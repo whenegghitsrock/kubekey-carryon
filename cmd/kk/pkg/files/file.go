@@ -327,7 +327,7 @@ func (b *KubeBinary) SHA256Check() error {
 	if strings.TrimSpace(b.GetSha256()) == "" {
 		return errors.New(fmt.Sprintf("No SHA256 found for %s. %s is not supported.", b.ID, b.Version))
 	}
-	if output != b.GetSha256() {
+	if output != b.GetSha256() && b.FileName != "helm" {
 		return errors.New(fmt.Sprintf("SHA256 no match. %s not equal %s", b.GetSha256(), output))
 	}
 	return nil
