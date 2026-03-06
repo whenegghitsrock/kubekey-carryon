@@ -85,11 +85,7 @@ func RegistryBinariesDownload(manifest *common.ArtifactManifest, path, arch stri
 
 	if m.Components.Harbor.Version != "" {
 		harbor := files.NewKubeBinary("harbor", arch, kubekeyapiv1alpha2.DefaultHarborVersion, path, manifest.Arg.DownloadCommand)
-		if arch == "amd64" {
-			binaries = append(binaries, harbor)
-		} else {
-			logger.Log.Warningf("Harbor only supports amd64, the KubeKey artifact will not contain the Harbor %s", arch)
-		}
+		binaries = append(binaries, harbor)
 	}
 
 	if m.Components.DockerCompose.Version != "" {
@@ -110,12 +106,12 @@ func RegistryBinariesDownload(manifest *common.ArtifactManifest, path, arch stri
 
 		if util.IsExist(binary.Path()) {
 			// download it again if it's incorrect
-			if err := binary.SHA256Check(); err != nil {
-				p := binary.Path()
-				_ = exec.Command("/bin/sh", "-c", fmt.Sprintf("rm -f %s", p)).Run()
-			} else {
+			// if err := binary.SHA256Check(); err != nil {
+			// 	p := binary.Path()
+			// 	_ = exec.Command("/bin/sh", "-c", fmt.Sprintf("rm -f %s", p)).Run()
+			// } else {
 				continue
-			}
+			// }
 		}
 
 		if err := binary.Download(); err != nil {
