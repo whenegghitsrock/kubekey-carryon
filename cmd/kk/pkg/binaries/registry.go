@@ -74,7 +74,6 @@ func RegistryPackageDownloadHTTP(kubeConf *common.KubeConf, path, arch string, p
 }
 
 func RegistryBinariesDownload(manifest *common.ArtifactManifest, path, arch string) error {
-
 	m := manifest.Spec
 	binaries := make([]*files.KubeBinary, 0, 0)
 

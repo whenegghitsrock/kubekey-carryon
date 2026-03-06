@@ -1367,6 +1367,9 @@
         "amd64": {
             "v2.5.3": "c536eaf5dcb35a1f2a5b1c4278380bde254a288700aa2ba59c1fd464bf2fcbf1",
             "v2.10.1": "aed3fe341e563e11286fb243b2bfe4162d0c5816d548df049df07fabceea038f"
+        },
+        "arm64": {
+            "v2.10.1": "f080a2c1a8a9bff5d84e9788aca463fdee570cf6b5660b020f37ce21ef6278e9"
         }
     },
     "calicoctl": {
